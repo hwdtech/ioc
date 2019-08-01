@@ -1,7 +1,5 @@
-import Dependency from "./Dependency";
+import Dependency, {wrap, depType} from "./Dependency";
 import Scope, {newScope} from "./Scope";
-
-export type depType = "value" | "function" | "dependency";
 
 class IoC {
     private scope: Scope;
@@ -11,7 +9,7 @@ class IoC {
     }
 
     public register(key: string, type: depType, dependency: Dependency | ((...params: any[]) => any) | any) {
-        this.scope.body[key] = this.resolve<Dependency>("Dependency Wraper", {type, dependency});
+        this.scope.body[key] = wrap(type, dependency);
     }
 
     public resolve<T>(key: string, params?: any): T {

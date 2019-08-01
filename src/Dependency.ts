@@ -4,8 +4,7 @@ interface IDependency {
 
 export type depType = "value" | "function" | "dependency";
 
-export function wrap(param: {type: depType, dependency: any}) {
-    const {type, dependency}  = param;
+export function wrap(type: depType, dependency: any) {
     if (type === "function") {
         return {
             invoke(params?: any) {
