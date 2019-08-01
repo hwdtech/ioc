@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/hwdtech/ioc.git"
   },
-  "author": "Ivan Molodtsov (https://github.com/IvanMolodtsov)",
+  "author": "Ivan Molodtsov vanmolodtsov@gmail.com (https://github.com/IvanMolodtsov)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/hwdtech/ioc/issues"
