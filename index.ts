@@ -1,5 +1,8 @@
+import IDependency from './src/Dependency'
 import IoC from "./src/IoC";
 import Scope from "./src/Scope";
+
+export type Dependency = IDependency
 
 const RootScope: Scope = {
     body: {},
