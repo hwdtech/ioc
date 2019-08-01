@@ -1,14 +1,14 @@
 {
   "name": "ioc-type",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Inversion of control container for Typescript.",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "tslint --fix --project .",
     "start": "npm run build:live",
     "build": "tsc",
-    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
