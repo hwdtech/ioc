@@ -1,15 +1,10 @@
-import IDependency from './src/Dependency'
 import IoC from "./src/IoC";
-import Scope from "./src/Scope";
+import IScope from "./src/Scope";
 
-export type Dependency = IDependency
-
-const RootScope: Scope = {
+const RootScope: IScope = {
     body: {},
     id: 0
 };
-
-console.log("da")
 
 const ioc = new IoC(RootScope);
 export default ioc;

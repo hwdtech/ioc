@@ -1,4 +1,4 @@
-import Dependency, {wrap, depType} from "./Dependency";
+import Dependency from "./Dependency";
 import Scope, {newScope} from "./Scope";
 
 class IoC {
@@ -8,8 +8,8 @@ class IoC {
         this.scope = scope;
     }
 
-    public register(key: string, type: depType, dependency: Dependency | ((...params: any[]) => any) | any) {
-        this.scope.body[key] = wrap(type, dependency);
+    public register(key: string, dependency: Dependency) {
+        this.scope.body[key] = dependency;
     }
 
     public resolve<T>(key: string, params?: any): T {
@@ -18,7 +18,7 @@ class IoC {
             if (!dependency) {
                 throw Error(`dependency "${key}" is undefined`);
             } else {
-                return dependency.invoke(params) as T;
+                return dependency(params) as T;
             }
         } catch (ex) {
             throw ex;
