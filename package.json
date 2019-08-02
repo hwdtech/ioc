@@ -1,10 +1,11 @@
 {
   "name": "ioc-type",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "description": "Inversion of control container for Typescript.",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "npm run build",
     "prebuild": "tslint --fix --project .",
     "start": "npm run build:live",
     "build": "tsc",
@@ -30,5 +31,8 @@
   "dependencies": {
     "reflect-metadata": "^0.1.13"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "homepage": "https://github.com/hwdtech/ioc#readme"
 }
