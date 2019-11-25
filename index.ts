@@ -1,10 +1,12 @@
-import IoC from "./src/IoC";
-import IScope from "./src/Scope";
+import D from "./src/core/IDependency";
+import store from "./src/core/Store";
+import Register from "./src/strict/Register";
+import Resolve from "./src/strict/Resolve";
 
-const RootScope: IScope = {
-    body: {},
-    id: 0
-};
+function IoC<P, T>(key: TemplateStringsArray): D<T> {
+    return store.get<P, T>(key[0]);
+}
 
-const ioc = new IoC(RootScope);
-export default ioc;
+export const strict = {Register, Resolve};
+
+export default IoC;
