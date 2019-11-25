@@ -10,7 +10,7 @@
     "start": "npm run build:live",
     "build": "tsc",
     "build:live": "nodemon --watch './**/*.ts' --exec 'ts-node' ./index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,13 @@
     "url": "https://github.com/hwdtech/ioc/issues"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.23",
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.6.8",
+    "jest": "^24.9.0",
     "lodash": "^4.17.15",
     "nodemon": "^1.19.1",
+    "ts-jest": "^24.2.0",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"

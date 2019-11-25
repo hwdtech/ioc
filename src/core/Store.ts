@@ -2,6 +2,7 @@ import _ from "lodash";
 import IScope from "./IScope";
 import Dependency from "./IDependency";
 import ResolveError from "./ResolveError";
+import { registerF } from "./Register";
 
 export class Store implements IScope {
 
@@ -19,5 +20,6 @@ export class Store implements IScope {
 }
 
 const store =  new Store();
+store.set("register", registerF)
 
 export default store;

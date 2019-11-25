@@ -5,10 +5,10 @@ import Register from "./src/strict/Register"
 import Resolve from "./src/strict/Resolve"
 import Store from "./src/strict/Store"
 
-function IoC<T>(key: TemplateStringsArray): D<T> {
-    return store.get<T>(key[0]);
+function IoC<T>(keys: TemplateStringsArray, ...placeholders: string[]): D<T> {
+    const key = (keys[0]|| '') + (placeholders[0] || '')
+    return store.get<T>(key);
 }
-
 
 let strictStore: Store
 
