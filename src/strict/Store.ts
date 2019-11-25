@@ -7,6 +7,7 @@ export class Store implements IScope {
 
     public dictionary = {};
 
+
     public get<P, T>(key: string): Dependency<P, T> {
         return _.get( this.dictionary, key, () => {
             throw new ResolveError(key);
@@ -18,6 +19,4 @@ export class Store implements IScope {
     }
 }
 
-const store =  new Store();
-
-export default store;
+export default Store;
