@@ -7,13 +7,13 @@ export class Store implements IScope {
 
     public dictionary = {};
 
-    public get<P, T>(key: string): Dependency<T> {
+    public get<T>(key: string): Dependency<T> {
         return _.get( this.dictionary, key, () => {
             throw new ResolveError(key);
         });
     }
 
-    public set<P, T>(key: string, D: Dependency<T>) {
+    public set<T>(key: string, D: Dependency<T>) {
         _.set(this.dictionary, key, D);
     }
 }

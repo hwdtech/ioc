@@ -5,8 +5,8 @@ import Register from "./src/strict/Register"
 import Resolve from "./src/strict/Resolve"
 import Store from "./src/strict/Store"
 
-function IoC<P, T>(key: TemplateStringsArray): D<T> {
-    return store.get<P, T>(key[0]);
+function IoC<T>(key: TemplateStringsArray): D<T> {
+    return store.get<T>(key[0]);
 }
 
 
